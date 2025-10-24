@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sistema Doa+</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/logo-doa.png') }}" type="image/x-icon">
+  </head>
+  <body>
+    <div class="header">
+      <a href=""><img src="{{ url_for('static', filename='img/logo-doa.png') }}" alt="logo do sistema Doa+" class="logo"></a>
+      <a href="{{ url_for('admin.login') }}" class="login-btn">Login</a>
+    </div>
+    <div class="container">
+        <h1>Sistema Doa+</h1>
+        <a href="{{ url_for('home.mostrar_categoria', categoria_nome='alimentos') }}"><button>alimentos</button></a>
+        <a href="{{ url_for('home.mostrar_categoria', categoria_nome='higiene') }}"><button>higiene & limpeza</button></a>
+        <a href="{{ url_for('home.mostrar_categoria', categoria_nome='vestuario') }}"><button>vestuário</button></a>
+        <a href="{{ url_for('home.mostrar_categoria', categoria_nome='serviços') }}"><button>serviços</button></a>
+      </div>
+
+      
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Doações</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="p-4">
+  <a href="{{ url_for('admin.dashboard') }}" class="btn btn-secondary mb-3">⬅ Voltar</a>
+  <h2>Lista de Doadores</h2>
+
+  {% if doacoes %}
+    <table class="table table-striped mt-3">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Email</th>
+          <th>Telefone</th>
+          <th>Categoria</th>
+          <th>Item</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for d in doacoes %}
+        <tr>
+          <td>{{ d.nome if d.nome else d['nome'] }}</td>
+          <td>{{ d.email if d.email else d['email'] }}</td>
+          <td>{{ d.telefone if d.telefone else d['telefone'] }}</td>
+          <td>{{ d.categoria if d.categoria else d['categoria'] }}</td>
+          <td>{{ d.item if d.item else d['item'] }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>Nenhuma doação registrada ainda.</p>
+  {% endif %}
+</body>
+</html>

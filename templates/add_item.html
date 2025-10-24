@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Adicionar Item - {{ categoria }}</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="p-4">
+  <h2>Adicionar item em {{ categoria }}</h2>
+  <form method="post">
+    <input type="text" name="nome" class="form-control mb-3" placeholder="Nome do item" required>
+    <textarea name="descricao" class="form-control mb-3" placeholder="Descrição" required></textarea>
+    <button class="btn btn-success">Salvar</button>
+    <a href="{{ url_for('admin.dashboard') }}" class="btn btn-secondary">Voltar</a>
+  </form>
+</body>
+</html>

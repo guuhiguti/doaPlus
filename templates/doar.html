@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Doar {{ item.nome }} - Doa+</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="p-4">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h2>Doar: {{ item.nome }}</h2>
+      <a href="{{ url_for('home.mostrar_categoria', categoria_nome=categoria) }}" class="btn btn-secondary">← Voltar</a>
+    </div>
+
+    <p><strong>Categoria:</strong> {{ categoria | capitalize }}</p>
+    <p><strong>Descrição:</strong> {{ item.descricao }}</p>
+
+    <form method="post" class="mt-4">
+      <div class="mb-3">
+        <label for="nome" class="form-label">Seu nome</label>
+        <input type="text" name="nome" id="nome" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">E-mail</label>
+        <input type="email" name="email" id="email" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label for="telefone" class="form-label">Telefone</label>
+        <input type="text" name="telefone" id="telefone" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label for="mensagem" class="form-label">Mensagem (opcional)</label>
+        <textarea name="mensagem" id="mensagem" class="form-control" rows="3"></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Confirmar Doação</button>
+      <a href="{{ url_for('home.mostrar_categoria', categoria_nome=categoria) }}" class="btn btn-outline-secondary">Cancelar</a>
+    </form>
+  </div>
+</body>
+</html>

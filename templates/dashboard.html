@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Painel Administrativo - Doa+</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Painel Doa+</a>
+      <div class="d-flex">
+        <a href="{{ url_for('admin.logout') }}" class="btn btn-outline-light">Sair</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-4">
+    <h2 class="mb-4">Gerenciamento de Itens</h2>
+
+    {% for categoria, lista in itens.items() %}
+      <div class="card mb-4 shadow-sm">
+        <div class="card-header d-flex justify-content-between align-items-center">
+          <h4 class="mb-0 text-capitalize">{{ categoria }}</h4>
+          <a href="{{ url_for('admin.add_item', categoria=categoria) }}" class="btn btn-success btn-sm">+ Adicionar Item</a>
+        </div>
+        <ul class="list-group list-group-flush">
+          {% for item in lista %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <div>
+                <strong>{{ item.nome }}</strong><br>
+                <small>{{ item.descricao }}</small>
+              </div>
+              <div>
+                <a href="{{ url_for('admin.edit_item', categoria=categoria, item_id=item.id) }}" class="btn btn-warning btn-sm me-2">Editar</a>
+                <a href="{{ url_for('admin.delete_item', categoria=categoria, item_id=item.id) }}" class="btn btn-danger btn-sm">Excluir</a>
+              </div>
+            </li>
+          {% else %}
+            <li class="list-group-item text-muted">Nenhum item nesta categoria.</li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endfor %}
+  </div>
+</body>
+</html>
