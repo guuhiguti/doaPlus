@@ -4,7 +4,7 @@ from database.db import itens, doacoes
 
 admin_route = Blueprint('admin', __name__)
 
-USER = {"email": "admin@instituicao.com", "senha": "1234"}
+USER = {"email": "teste@gmail.com", "senha": "123"}
 
 @admin_route.route('/login', methods=['GET', 'POST'])
 def login():
@@ -31,6 +31,8 @@ def dashboard():
 
 @admin_route.route('/doacoes')
 def ver_doacoes():
+    if not session.get('logado'):
+        return redirect(url_for('admin.login'))
     return render_template('lista_doacoes.html', doacoes=doacoes)
 
 # CRUD

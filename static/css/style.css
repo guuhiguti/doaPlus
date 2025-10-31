@@ -15,18 +15,18 @@ body {
 
 .container {
     width: 500px;
-    height: 400px;
+    height: auto;
     padding: 40px;
     border-radius: 15px;
     text-align: center;
-    background: #ffff;
+    background: #fff;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     position: relative;
 }
 
 h1 {
     color: #1e3a8a;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     font-size: 2rem;
     font-weight: 600;
 }
@@ -37,11 +37,11 @@ h1 {
   right: 20px;
   display: flex;
   align-items: center;
-  gap: 10px; /* Espaço entre a logo e o botão */
+  gap: 10px;
 }
 
 .logo {
-  height: 60px; /* Ajuste conforme o tamanho desejado */
+  height: 60px;
   border-radius: 50%;
   object-fit: cover;
 }
@@ -51,22 +51,22 @@ h1 {
     border: none;
     border-radius: 6px;
     padding: 6px 14px;
-    background: #3b82f6;
+    background: #2563eb;
     color: #fff;
-    font-size: 0.9;
+    font-size: 0.9rem;
     font-weight: 500;
     cursor: pointer;
     transition: background 0.2s ease;
 }
 
 .login-btn:hover {
-    background: #2563eb;
+    background: #1d4ed8;
 }
 
 button { 
     display: block; 
     width: 100%; 
-    margin: 12px 0; 
+    margin: 20px 0; 
     padding: 14px; 
     font-size: 1.1rem; 
     border: none; 
@@ -93,30 +93,12 @@ button a {
     font-weight: 500;
 }
 
-.input-group {
-    text-align: left;
-    margin-bottom: 20px;
-}
-
-label {
-    display: block;
-    margin-bottom: 6px;
-    font-size: 0.95rem;
+ul {
+    list-style-type: "✔ ";
+    padding-left: 20px;
     color: #1e3a8a;
-    font-weight: 500;
 }
 
-input {
-    width: 100%;
-    padding: 12px;
-    border-radius: 10px;
-    border: 1.5px solid #cbd5e1;
-    font-size: 1rem;
-    outline: none;
-    transition: all 0.2s ease;
-}
-
-input:focus {
-    border-color: #3b82f6;
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+.text-secondary {
+    color: #475569 !important;
 }

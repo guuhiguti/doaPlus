@@ -10,10 +10,19 @@
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Painel Doa+</a>
       <div class="d-flex">
-        <a href="{{ url_for('admin.logout') }}" class="btn btn-outline-light">Sair</a>
+        <a href="{{ url_for('admin.ver_doacoes') }}" class="btn btn-light">Ver Lista de Doações</a>
+      </div>
+      <div class="d-flex">
+        <a href="{{ url_for('home.index') }}" class="btn btn-outline-light">Voltar</a>
       </div>
     </div>
+    <div class="d-flex">
+      <a href="{{ url_for('admin.logout') }}" class="btn btn-outline-light">Sair</a>
+    </div>
+
+    
   </nav>
+
 
   <div class="container mt-4">
     <h2 class="mb-4">Gerenciamento de Itens</h2>
